@@ -24,8 +24,7 @@ TOP_K             = 4       # chunks to retrieve
 SCORE_THRESHOLD   = 0.35    
 
 
-with open("geminiapikey22.txt", "r") as f:
-    api_key = f.read().strip()
+api_key = st.secrets["GEMINI_API_KEY"]
 
 genai.configure(api_key=api_key)
 model = genai.GenerativeModel(GEN_MODEL)

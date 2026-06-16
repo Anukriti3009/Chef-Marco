@@ -16,6 +16,10 @@ import re
 import streamlit as st
 import google.generativeai as genai
 import wikipediaapi
+import os
+
+if not os.path.exists("vector_store.json"):
+    import build_index   # runs the whole script on first boot
 
 VECTOR_STORE_FILE = "vector_store.json"
 EMBED_MODEL       = "models/gemini-embedding-001"
